@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento Andréia & Dilnei - 29 de Novembro 2024</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+        
+        nav a {
+            color: #8B4B8C;
+            text-decoration: none;
+            margin: 0 2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #D4A574;
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(139, 75, 140, 0.7), rgba(212, 165, 116, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23f5f7fa"/><stop offset="100%" stop-color="%23c3cfe2"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .date-location {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #D4A574;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #8B4B8C;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .detail-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .detail-card h3 {
+            color: #8B4B8C;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .gallery {
+            background: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .rsvp {
+            background: linear-gradient(135deg, #8B4B8C, #D4A574);
+            color: white;
+            text-align: center;
+        }
+        
+        .rsvp .section-title {
+            color: white;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            nav a {
+                margin: 0 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#about">Nossa História</a>
+            <a href="#details">Detalhes</a>
+            <a href="#gallery">Galeria</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Andréia & Dilnei</h1>
+            <h2>Estamos nos casando!</h2>
+            <div class="date-location">
+                <p>📅 29 de Novembro de 2024</p>
+                <p>📍 Tubarão, Santa Catarina</p>
+            </div>
+            <a href="#rsvp" class="cta-button">Confirmar Presença</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Nossa História de Amor</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Nossa jornada começou de forma especial e única. Cada momento vivido juntos nos trouxe até este dia tão esperado.</p>
+                    <p>Ao longo dos anos, construímos uma relação baseada no amor, respeito, cumplicidade e muitas risadas. Agora, queremos celebrar este novo capítulo de nossas vidas com as pessoas que mais amamos.</p>
+                    <p>Este é apenas o começo de uma nova aventura, e não poderíamos estar mais felizes em compartilhar este momento especial com vocês!</p>
+                </div>
+                <div class="about-image">
+                    <div style="width: 300px; height: 400px; background: #f0f0f0; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto; color: #999;">
+                        Foto do Casal
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details">
+        <div class="container">
+            <h2 class="section-title">Detalhes do Casamento</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>📅 Data</h3>
+                    <p><strong>29 de Novembro de 2024</strong></p>
+                    <p>Sábado</p>
+                </div>
+                <div class="detail-card">
+                    <h3>📍 Local</h3>
+                    <p><strong>Tubarão, Santa Catarina</strong></p>
+                    <p>Endereço completo será informado em breve</p>
+                </div>
+                <div class="detail-card">
+                    <h3>🕐 Horário</h3>
+                    <p><strong>Cerimônia:</strong> A definir</p>
+                    <p><strong>Recepção:</strong> A definir</p>
+                </div>
+                <div class="detail-card">
+                    <h3>👗 Dress Code</h3>
+                    <p><strong>Traje Social/Festa</strong></p>
+                    <p>Vista-se com elegância para celebrar conosco!</p>
+                </div>
+                <div class="detail-card">
+                    <h3>🎁 Lista de Presentes</h3>
+                    <p>Informações sobre lista de presentes serão disponibilizadas em breve</p>
+                </div>
+                <div class="detail-card">
+                    <h3>🚗 Como Chegar</h3>
+                    <p>Informações sobre transporte e estacionamento serão fornecidas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Nossa Galeria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">Foto 1</div>
+                <div class="gallery-item">Foto 2</div>
+                <div class="gallery-item">Foto 3</div>
+                <div class="gallery-item">Foto 4</div>
+                <div class="gallery-item">Foto 5</div>
+                <div class="gallery-item">Foto 6</div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #666;">
+                As fotos serão adicionadas em breve. Fique ligado para ver nossos momentos especiais!
+            </p>
+        </div>
+    </section>
+
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <h2 class="section-title">Confirme sua Presença</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">
+                Sua presença é muito importante para nós! Por favor, confirme até 15 de novembro de 2024.
+            </p>
+            <a href="#" class="cta-button" style="background: white; color: #8B4B8C;">
+                Confirmar Presença
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                O formulário de RSVP será disponibilizado em breve
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Casamento Andréia & Dilnei. Feito com ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
